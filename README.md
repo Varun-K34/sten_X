@@ -6,6 +6,9 @@
 
 
 ![Authentication_screen](https://github.com/Varun-K34/sten_X/assets/85250850/97f97072-af66-4de3-95e4-137d1f8b3551)
+![Home_screen](https://github.com/Varun-K34/sten_X/assets/85250850/89bb2edd-03ac-45d3-a3c2-e787acea0052)
+![Summarize_screen](https://github.com/Varun-K34/sten_X/assets/85250850/daf55833-4fa6-4b57-8d1c-3e38d11af79d)
+![History screen](https://github.com/Varun-K34/sten_X/assets/85250850/25e9eccf-1e33-4365-bec6-0195873e58e0)
 
 \
 
