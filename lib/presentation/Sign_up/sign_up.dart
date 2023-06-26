@@ -30,146 +30,98 @@ class SignUpPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 30),
-                Row(
-                  children: [
-                    Image.asset(
-                      ImageConstant.imgUser2, // Updated image asset
-                      height: 31,
-                      width: 25,
-                      alignment: Alignment.topLeft,
+                TextFormField(
+                  controller: usernameController,
+                  onChanged: (value) {
+                    // Handle username changes here
+                  },
+                  decoration: InputDecoration(
+                    labelText: "Username",
+                    labelStyle: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'Poppins',
                     ),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: TextFormField(
-                        controller: usernameController,
-                        onChanged: (value) {
-                          // Handle username changes here
-                        },
-                        decoration: InputDecoration(
-                          labelText: "Username",
-                          labelStyle: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Poppins',
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(
-                              color: ColorConstant.gray9007e,
-                              width: 1,
-                            ),
-                          ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 10),
-                        ),
+                    prefixIcon: Icon(Icons.person),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: ColorConstant.gray9007e,
+                        width: 1,
                       ),
                     ),
-                  ],
+                    contentPadding: EdgeInsets.symmetric(vertical: 10),
+                  ),
                 ),
                 SizedBox(height: 20),
-                Row(
-                  children: [
-                    Image.asset(
-                      ImageConstant.imgEmail, // Updated image asset
-                      height: 31,
-                      width: 25,
-                      alignment: Alignment.topLeft,
+                TextFormField(
+                  controller: emailController,
+                  onChanged: (value) {
+                    // Handle email changes here
+                  },
+                  decoration: InputDecoration(
+                    labelText: "Email",
+                    labelStyle: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'Poppins',
                     ),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: TextFormField(
-                        controller: emailController,
-                        onChanged: (value) {
-                          // Handle email changes here
-                        },
-                        decoration: InputDecoration(
-                          labelText: "Email",
-                          labelStyle: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Poppins',
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(
-                              color: ColorConstant.gray9007e,
-                              width: 1,
-                            ),
-                          ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 10),
-                        ),
+                    prefixIcon: Icon(Icons.email),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: ColorConstant.gray9007e,
+                        width: 1,
                       ),
                     ),
-                  ],
+                    contentPadding: EdgeInsets.symmetric(vertical: 10),
+                  ),
                 ),
                 SizedBox(height: 20),
-                Row(
-                  children: [
-                    Image.asset(
-                      ImageConstant.imgPadlock1,
-                      height: 31,
-                      width: 25,
-                      alignment: Alignment.topLeft,
+                TextFormField(
+                  controller: passwordController,
+                  obscureText: true,
+                  onChanged: (value) {
+                    // Handle password changes here
+                  },
+                  decoration: InputDecoration(
+                    labelText: "Password",
+                    labelStyle: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'Poppins',
                     ),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: TextFormField(
-                        controller: passwordController,
-                        obscureText: true,
-                        onChanged: (value) {
-                          // Handle password changes here
-                        },
-                        decoration: InputDecoration(
-                          labelText: "Password",
-                          labelStyle: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Poppins',
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(
-                              color: ColorConstant.gray9007e,
-                              width: 1,
-                            ),
-                          ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 10),
-                        ),
+                    prefixIcon: Icon(Icons.lock),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: ColorConstant.gray9007e,
+                        width: 1,
                       ),
                     ),
-                  ],
+                    contentPadding: EdgeInsets.symmetric(vertical: 10),
+                  ),
                 ),
                 SizedBox(height: 20),
-                Row(
-                  children: [
-                    Image.asset(
-                      ImageConstant.imgPadlock1,
-                      height: 31,
-                      width: 25,
-                      alignment: Alignment.topLeft,
+                TextFormField(
+                  controller: confirmPasswordController,
+                  obscureText: true,
+                  onChanged: (value) {
+                    // Handle confirm password changes here
+                  },
+                  decoration: InputDecoration(
+                    labelText: "Confirm Password",
+                    labelStyle: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'Poppins',
                     ),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: TextFormField(
-                        controller: confirmPasswordController,
-                        obscureText: true,
-                        onChanged: (value) {
-                          // Handle confirm password changes here
-                        },
-                        decoration: InputDecoration(
-                          labelText: "Confirm Password",
-                          labelStyle: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Poppins',
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(
-                              color: ColorConstant.gray9007e,
-                              width: 1,
-                            ),
-                          ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 10),
-                        ),
+                    prefixIcon: Icon(Icons.lock),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: ColorConstant.gray9007e,
+                        width: 1,
                       ),
                     ),
-                  ],
+                    contentPadding: EdgeInsets.symmetric(vertical: 10),
+                  ),
                 ),
                 SizedBox(height: 40),
                 Align(
@@ -222,7 +174,17 @@ class SignUpPage extends StatelessWidget {
 
   void onTapSignUp(BuildContext context) {
     // Perform sign-up logic here
-    addlogindata();
+    if (areFieldsEmpty()) {
+      showFieldsEmptySnackbar(
+          context); // Display snackbar if any text fields are empty
+    } else if (!doPasswordsMatch()) {
+      showPasswordsDoNotMatchSnackbar(
+          context); // Display snackbar if passwords do not match
+    } else {
+      addLoginData();
+      showAccountCreatedSnackbar(
+          context); // Display snackbar on successful sign-up
+    }
   }
 
   void onTapSignIn(BuildContext context) {
@@ -234,7 +196,7 @@ class SignUpPage extends StatelessWidget {
     );
   }
 
-  Future<void> addlogindata() async {
+  Future<void> addLoginData() async {
     final _username = usernameController.text;
     final _email = emailController.text;
     final _password = passwordController.text;
@@ -253,6 +215,47 @@ class SignUpPage extends StatelessWidget {
       email: _email,
       password: _password,
     );
-    addlogindetails(_db);
+    addLoginDetails(_db);
+  }
+
+  void addLoginDetails(Signupdb db) {
+    // Add the login details to the database
+  }
+
+  bool areFieldsEmpty() {
+    final _username = usernameController.text;
+    final _email = emailController.text;
+    final _password = passwordController.text;
+    return _username.isEmpty || _email.isEmpty || _password.isEmpty;
+  }
+
+  bool doPasswordsMatch() {
+    final _password = passwordController.text;
+    final _confirmPassword = confirmPasswordController.text;
+    return _password == _confirmPassword;
+  }
+
+  void showFieldsEmptySnackbar(BuildContext context) {
+    final snackBar = SnackBar(
+      content: Text('Please fill in all the required fields'),
+      duration: Duration(seconds: 2),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  void showPasswordsDoNotMatchSnackbar(BuildContext context) {
+    final snackBar = SnackBar(
+      content: Text('Passwords do not match'),
+      duration: Duration(seconds: 2),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  void showAccountCreatedSnackbar(BuildContext context) {
+    final snackBar = SnackBar(
+      content: Text('Account created successfully!'),
+      duration: Duration(seconds: 2),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

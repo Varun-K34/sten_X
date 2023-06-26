@@ -143,8 +143,9 @@ class _TwoScreenState extends State<TwoScreen>
                       child: Text(
                         "Summarize",
                         style: TextStyle(
-                          fontSize: getSize(context, 18),
+                          fontSize: 24, // Adjust the font size here
                           color: isDarkMode ? Colors.white : Colors.black,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -169,8 +170,9 @@ class _TwoScreenState extends State<TwoScreen>
                       child: Text(
                         "History",
                         style: TextStyle(
-                          fontSize: getSize(context, 18),
+                          fontSize: 24, // Adjust the font size here
                           color: isDarkMode ? Colors.white : Colors.black,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),

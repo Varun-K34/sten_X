@@ -14,5 +14,5 @@ export 'package:varun_s_application20/widgets/app_bar/appbar_title.dart';
 export 'package:varun_s_application20/widgets/app_bar/custom_app_bar.dart';
 export 'package:varun_s_application20/widgets/custom_button.dart';
 
-export 'package:varun_s_application20/db_functions/functions_db.dart';
+export 'package:varun_s_application20/db_functions/signup/functions_db.dart';
 export 'package:varun_s_application20/presentation/Sign_up/sign_up.dart';

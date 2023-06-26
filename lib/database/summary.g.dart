@@ -1,41 +1,40 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'signup_db.dart';
+// ignore_for_file: camel_case_types
+
+part of 'summary.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class SignupdbAdapter extends TypeAdapter<Signupdb> {
+class summarytextAdapter extends TypeAdapter<summarytext> {
   @override
-  final int typeId = 1;
+  final int typeId = 2;
 
   @override
-  Signupdb read(BinaryReader reader) {
+  summarytext read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Signupdb(
+    return summarytext(
       id: fields[0] as String,
-      username: fields[1] as String,
-      email: fields[2] as String,
-      password: fields[3] as String,
+      name: fields[1] as String,
+      text: fields[2] as String,
     );
   }
 
   @override
-  void write(BinaryWriter writer, Signupdb obj) {
+  void write(BinaryWriter writer, summarytext obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.username)
+      ..write(obj.name)
       ..writeByte(2)
-      ..write(obj.email)
-      ..writeByte(3)
-      ..write(obj.password);
+      ..write(obj.text);
   }
 
   @override
@@ -44,7 +43,7 @@ class SignupdbAdapter extends TypeAdapter<Signupdb> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is SignupdbAdapter &&
+      other is summarytextAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

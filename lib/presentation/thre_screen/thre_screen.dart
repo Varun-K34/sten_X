@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:varun_s_application20/core/app_export.dart';
-
+import 'package:varun_s_application20/database/summary.dart';
+import 'package:varun_s_application20/db_functions/summaryfc/summaryfunc.dart';
 
 class ThreScreen extends StatefulWidget {
   @override
@@ -88,7 +89,7 @@ class _ThreScreenState extends State<ThreScreen> {
     return Container(
       margin: getMargin(context, top: 14, right: 14, bottom: 11),
       decoration: BoxDecoration(
-        color: isDarkMode ? Colors.grey[800] : Colors.white,
+        color: isDarkMode ? Color(0xFF555555) : Colors.white,
         borderRadius: BorderRadius.circular(4),
       ),
       child: SingleChildScrollView(
@@ -112,8 +113,9 @@ class _ThreScreenState extends State<ThreScreen> {
               border: InputBorder.none,
               hintText: 'Enter your text...',
               hintStyle: TextStyle(
-                color:
-                    isDarkMode ? Colors.white : Colors.black.withOpacity(0.5),
+                color: isDarkMode
+                    ? Color(0xFFFFFFFF)
+                    : Colors.black.withOpacity(0.5),
                 fontSize: 16,
                 fontWeight: FontWeight.normal,
                 fontFamily: 'Poppins',
@@ -194,7 +196,7 @@ class _ThreScreenState extends State<ThreScreen> {
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: TextStyle(
-                                color: isDarkMode ? Colors.white : Colors.black,
+                                color: isDarkMode ? Colors.black : Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.normal,
                                 fontFamily: 'Poppins',
@@ -321,6 +323,10 @@ class _ThreScreenState extends State<ThreScreen> {
                 fontStyle: ButtonFontStyle.PoppinsBold20,
                 context: context,
                 buttonColor: ColorConstant.blueA100,
+                onTap: () {
+                  savesummary();
+                  showSavedIndicator(context);
+                },
               ),
               Container(
                 width: double.maxFinite,
@@ -363,4 +369,48 @@ class _ThreScreenState extends State<ThreScreen> {
       ),
     );
   }
+
+  Future<void> savesummary() async {
+    final summary = TextEditingController(text: summaryText).text;
+    if (summary.isEmpty) {
+      return;
+    }
+    final passsummary = summarytext(
+      id: DateTime.now().microsecondsSinceEpoch.toString(),
+      name: 'Summary [${DateTime.now().microsecondsSinceEpoch.toString()}]',
+      text: summary,
+    );
+    summarytextadd(passsummary);
+  }
+
+  void showSavedIndicator(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Saved"),
+          content: Text("Summary has been saved."),
+          actions: [
+            TextButton(
+              child: Text("OK"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 }
+
+
+
+
+
+
+//Uri.parse('http://10.0.2.2:5000/summarize'),
+
+
+
+// Uri.parse('http://192.168.1.7:5000/summarize'),

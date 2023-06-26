@@ -16,14 +16,15 @@ class OneScreen extends StatelessWidget {
           children: [
             Flexible(
               child: Image.asset(
-                
                 ImageConstant.imgLogo,
                 height: 180,
                 width: 180,
-               // fit: BoxFit.fitHeight, // Fit the image to cover the available space
+                // fit: BoxFit.fitHeight, // Fit the image to cover the available space
               ),
             ),
-            SizedBox(height: 50,),
+            SizedBox(
+              height: 50,
+            ),
             Padding(
               padding: EdgeInsets.all(16.0),
               child: Column(
@@ -131,7 +132,8 @@ class OneScreen extends StatelessWidget {
                         children: [
                           TextButton(
                             onPressed: () {
-                              // Handle "forgot password?" button press
+                              onTapForgotPassword(
+                                  context); // Handle "forgot password?" button press
                             },
                             child: Text(
                               "Forgot password?",
@@ -140,6 +142,7 @@ class OneScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                                 fontStyle: FontStyle.italic,
                                 fontFamily: 'Poppins',
+
                                 color: Color(0xFFAAB7FF), // Text color
                               ),
                             ),
@@ -203,11 +206,12 @@ class OneScreen extends StatelessWidget {
     final _username = usernameController.text;
     final _password = passwordController.text;
     if (_username.isEmpty || _password.isEmpty) {
+      showFieldsEmptyDialog(context);
       return;
     }
-    List<Signupdb> db_values = await getlogindetails();
+    List<Signupdb> dbValues = await getlogindetails();
     bool isUserFound = false;
-    for (var item in db_values) {
+    for (var item in dbValues) {
       if ((_username == item.username) && (_password == item.password)) {
         isUserFound = true;
         break;
@@ -241,6 +245,52 @@ class OneScreen extends StatelessWidget {
       MaterialPageRoute(
         builder: (context) => SignUpPage(), // Navigate to SignUpPage
       ),
+    );
+  }
+
+  void onTapForgotPassword(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Forgot Password?"),
+          content: Text("Please sign up to create a new account."),
+          actions: [
+            TextButton(
+              onPressed: () {
+                onTapSignUp(context); // Navigate to sign up page
+              },
+              child: Text("Sign Up"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context); // Close the dialog
+              },
+              child: Text("Cancel"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void showFieldsEmptyDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Fields Empty"),
+          content: Text("Please fill in all the required fields"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context); // Close the dialog
+              },
+              child: Text("OK"),
+            ),
+          ],
+        );
+      },
     );
   }
 }
