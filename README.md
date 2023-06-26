@@ -1,6 +1,15 @@
 
 # varun_s_application20
 ### Table of contents
+
+
+
+
+![Authentication_screen](https://github.com/Varun-K34/sten_X/assets/85250850/97f97072-af66-4de3-95e4-137d1f8b3551)
+
+\
+
+
 - [System requirements](#system-requirements)
 - [Figma design guidelines for better UI accuracy](#figma-design-guideline-for-better-accuracy)
 - [Check the UI of the entire app](#app-navigations)
