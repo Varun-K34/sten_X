@@ -17,10 +17,15 @@ Flutter SDK Version 3.3.0 or greater.
 
 ### Figma design guidelines for better UI accuracy
 
+
 Read our guidelines to increase the accuracy of design-to-code conversion by optimizing Figma designs.
-https://docs.dhiwise.com/docs/Designguidelines/intro
+https://docs.dhiwise.com/docs/Designguidelines/intro![Authentication_screen](https://github.com/Varun-K34/sten_X/assets/85250850/da560931-b6f3-46e6-856c-fbbd5cb14399)
+
 
 ### Check the UI of the entire app
+
+C:\Users\appuv\OneDrive\Dgms\Authentication_screen.jpg
+
 
 Check the UI of all the app screens from a single place by setting up the 'initialRoute'  to AppNavigation in the AppRoutes.dart file.
 
