@@ -31,8 +31,6 @@ class MyApp extends StatelessWidget {
       title: 'StenX',
       debugShowCheckedModeBanner: false,
       initialRoute: AppRoutes.oneScreen,
-
-      
       routes: AppRoutes.routes,
     );
   }

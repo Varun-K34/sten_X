@@ -66,7 +66,7 @@ class _TwoScreenState extends State<TwoScreen>
             padding: getPadding(context, left: 23, top: 18, bottom: 23),
           ),
           centerTitle: true,
-          title: AppbarTitle(text: "Synco"),
+          title: AppbarTitle(text: "StenX"),
           actions: [
             AppbarImage(
               height: getSize(context, 30),

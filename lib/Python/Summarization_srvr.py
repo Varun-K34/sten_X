@@ -110,9 +110,9 @@ def summarize():
     response = {'summary': summary}
     return jsonify(response)
 
-if __name__ == '__main__':
-    app.run()
-
 # if __name__ == '__main__':
-#     app.run(host='192.168.1.7')  
+#     app.run()
+
+if __name__ == '__main__':
+    app.run(host='192.168.182.119')  
 

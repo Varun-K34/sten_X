@@ -29,7 +29,7 @@ class _ThreScreenState extends State<ThreScreen> {
 
   Future<String> summarizeText(String inputText) async {
     final response = await http.post(
-      Uri.parse('http://10.0.2.2:5000/summarize'),
+      Uri.parse('http://192.168.182.119:5000/summarize'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'text': inputText}),
     );
@@ -89,7 +89,7 @@ class _ThreScreenState extends State<ThreScreen> {
     return Container(
       margin: getMargin(context, top: 14, right: 14, bottom: 11),
       decoration: BoxDecoration(
-        color: isDarkMode ? Color(0xFF555555) : Colors.white,
+        color: isDarkMode ? Color(0xFF555555) : ColorConstant.gray100,
         borderRadius: BorderRadius.circular(4),
       ),
       child: SingleChildScrollView(
